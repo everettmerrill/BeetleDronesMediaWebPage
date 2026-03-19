@@ -1,44 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import AnimeBackground from './assets/AnimeBackgroundWeb.jpg'
-import './App.css'
+import { useState } from "react";
+import WebmLandingPageVideo from "./assets/heroSplashVideo.webm";
+import heroPoster from "./assets/heroSplashPoster.webp";
+import BeetleDronesBannerLogo from "./assets/BeetleDronesBannerLogo1.png";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [logoHovered, setLogoHovered] = useState(false);
 
   return (
     <>
-    
-    <div>
-      <h1 className="mainTitle">Beetle Drones Media</h1>
-      <img src={AnimeBackground} className="backgroundImage" 
-      alt="Berserk Background Image">
-        
-      </img>
-    </div>
       <div>
-        <a href="https://codesalmon.io" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <video className="backgroundImage" autoPlay muted loop poster={heroPoster} >
+          <source src={WebmLandingPageVideo} type="video/webm" />
+        </video>
+        <a href="/welcome-to-the-show">
+          <img
+            src={BeetleDronesBannerLogo}
+            className={`bannerLogo${logoHovered ? " logoNoAnim" : ""}`}
+            alt=" Beetle Drones Media Banner Logo for Landing Page"
+            onMouseEnter={() => setLogoHovered(true)}
+            onTouchStart={() => setLogoHovered(true)}
+          />
         </a>
       </div>
-      
+
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          © 2026 Beetle Drones Media. <br />
+          All rights reserved. <br />
+          Privacy Policy | Contact
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
