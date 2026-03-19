@@ -5,6 +5,28 @@
   text-align: center;
 }
 
+.skipButton {
+position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  padding: 6px 16px;
+  background: #000000;
+  color: #28f02f;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, color 0.2s;
+}
+
+.skipButton:hover {
+  background: #28f02f;
+  color: #000000;
+}
 
 .backgroundImage {
   position: fixed;

@@ -9,7 +9,13 @@ function App() {
 
   return (
     <>
-      <div>
+      <main>
+        <nav>
+          <a 
+          href="/welcome-to-the-show"
+          className="skipButton"
+          >Skip</a>
+        </nav>
         <video className="backgroundImage" autoPlay muted loop poster={heroPoster} >
           <source src={WebmLandingPageVideo} type="video/webm" />
         </video>
@@ -19,18 +25,17 @@ function App() {
             className={`bannerLogo${logoHovered ? " logoNoAnim" : ""}`}
             alt=" Beetle Drones Media Banner Logo for Landing Page"
             onMouseEnter={() => setLogoHovered(true)}
-            onTouchStart={() => setLogoHovered(true)}
           />
         </a>
-      </div>
+      </main>
 
-      <div className="card">
+      <footer className="card">
         <p>
           © 2026 Beetle Drones Media. <br />
           All rights reserved. <br />
           Privacy Policy | Contact
         </p>
-      </div>
+      </footer>
     </>
   );
 }
